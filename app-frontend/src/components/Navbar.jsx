@@ -265,7 +265,7 @@ function Navbar() {
               {/* CTA */}
               <button
                 onClick={() => setShowlogin(true)}
-                className="hidden text-sm font-semibold text-white px-5 py-2 rounded-lg
+                className="hidden md:block text-sm font-semibold text-white px-5 py-2 rounded-lg
                   cursor-pointer border-none transition-all duration-200
                   hover:scale-[1.03] hover:brightness-110"
                 style={{

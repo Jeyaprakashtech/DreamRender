@@ -55,11 +55,12 @@ function Gallery() {
   });
 
   /*------- Image Downloader ---------*/
-const downloadUrl = (image) => {
-  return image.replace(
-  "/upload/",
-  "/upload/fl_attachment:Dreamrender-image/"
-)}
+  const downloadUrl = (image) => {
+    return image.replace(
+      "/upload/",
+      "/upload/fl_attachment:Dreamrender-image/",
+    );
+  };
   const openFull = (img) => {
     setSelected(img);
     setFullview(true);
@@ -291,8 +292,6 @@ const downloadUrl = (image) => {
                   }}
                   onClick={() => openFull(img)}
                 >
-
-                  
                   {/* Image */}
                   <img
                     src={img.image}
@@ -317,7 +316,7 @@ const downloadUrl = (image) => {
 
                   {/* Hover overlay */}
                   <div
-                    className="absolute inset-0 flex flex-col justify-end p-3 gap-2
+                    className="absolute hidden  inset-0 md:flex flex-col justify-end p-3 gap-2
                       opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                     style={{
                       background:
@@ -333,13 +332,12 @@ const downloadUrl = (image) => {
                     </p>
 
                     {/* Action buttons */}
-                    <div className="flex gap-2">
+                    <div className="flex justify-around gap-2">
                       <a
                         href={downloadUrl(img.image)}
-                        
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg
+                        className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg
                           text-xs font-semibold text-white no-underline
                           transition-all duration-150 hover:brightness-110"
                         style={{
@@ -392,7 +390,7 @@ const downloadUrl = (image) => {
             }}
           >
             <motion.div
-              className="relative w-full max-w-4xl rounded-2xl overflow-hidden
+              className="relative w-full max-w-4xl max-h-[70vh] rounded-2xl overflow-scroll lg:overflow-hidden
                 grid grid-cols-1 lg:grid-cols-[1fr_1fr]"
               style={{
                 background: "#12101A",
@@ -421,7 +419,7 @@ const downloadUrl = (image) => {
                 <motion.img
                   src={selected.image}
                   alt={selected.prompt}
-                  className="w-full max-h-[70vh] object-contain rounded-xl"
+                  className="w-full max-h-[70vh]   object-contain rounded-xl"
                   style={{ boxShadow: "0 0 40px rgba(124,58,237,0.3)" }}
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -432,7 +430,7 @@ const downloadUrl = (image) => {
               {/* ── RIGHT — details ── */}
               <div className="flex flex-col gap-5 p-7 pt-10">
                 <h2
-                  className="text-2xl font-extrabold text-[#F1F0FF]"
+                  className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#F1F0FF]"
                   style={{ fontFamily: "'Syne', sans-serif" }}
                 >
                   Image Details
@@ -453,7 +451,7 @@ const downloadUrl = (image) => {
                 </div>
 
                 {/* Prompt */}
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 ">
                   <label
                     className="text-xs font-semibold tracking-[0.08em] uppercase"
                     style={{
@@ -464,7 +462,7 @@ const downloadUrl = (image) => {
                     Prompt
                   </label>
                   <p
-                    className="px-4 py-3.5 rounded-xl text-sm text-[#F1F0FF] leading-relaxed"
+                    className="px-4 py-3.5 rounded-xl text-sm text-[#F1F0FF] leading-relaxed h-24.5"
                     style={{
                       fontFamily: "'JetBrains Mono', monospace",
                       background: "#1C1828",
@@ -516,7 +514,6 @@ const downloadUrl = (image) => {
                 >
                   <a
                     href={downloadUrl(selected.image)}
-                    
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold
                       text-white no-underline transition-all duration-200
