@@ -245,7 +245,7 @@ function Navbar() {
               {/* Ghost login */}
               <button
                 onClick={() => setShowlogin(true)}
-                className="hidden sm:block text-sm font-medium text-[#A89EC4] bg-transparent
+                className=" sm:block text-sm font-medium text-[#A89EC4] bg-transparent
                   px-4 py-2 rounded-lg cursor-pointer transition-all duration-200
                   hover:text-[#F1F0FF] hover:bg-[rgba(124,58,237,0.08)]"
                 style={{
@@ -265,7 +265,7 @@ function Navbar() {
               {/* CTA */}
               <button
                 onClick={() => setShowlogin(true)}
-                className="text-sm font-semibold text-white px-5 py-2 rounded-lg
+                className="hidden text-sm font-semibold text-white px-5 py-2 rounded-lg
                   cursor-pointer border-none transition-all duration-200
                   hover:scale-[1.03] hover:brightness-110"
                 style={{
