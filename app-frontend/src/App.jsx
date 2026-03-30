@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
-import ScrollToTop from "./components/Scrolltotop";
+import ScrollToTop from "./components/ScrollToTop";
 import PageLoader from "./components/PageLoader";
 
 const App = () => {
