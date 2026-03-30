@@ -20,6 +20,13 @@ function Navbar() {
   const [dropdownOpen, setDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
+  const handleNavigation = (href) => {
+    if ((href === "/generate" || href === "/gallery") && !user) {
+      setShowlogin(true);
+    } else {
+      navigate(href);
+    }
+  };
   /* scroll */
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10);
@@ -65,9 +72,9 @@ function Navbar() {
         {/* ── Desktop nav links ── */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map(({ label, href }) => (
-            <Link
+            <button
               key={label}
-              to={href}
+              onClick={() => handleNavigation(href)}
               className={`relative text-sm font-medium pb-0.5 transition-colors duration-200
                 no-underline group
                 ${isActive(href) ? "text-[#F1F0FF]" : "text-[#A89EC4] hover:text-[#F1F0FF]"}`}
@@ -83,7 +90,7 @@ function Navbar() {
                   background: "linear-gradient(90deg, #7C3AED, #22D3EE)",
                 }}
               />
-            </Link>
+            </button>
           ))}
         </div>
 
