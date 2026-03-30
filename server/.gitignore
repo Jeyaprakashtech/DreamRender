@@ -1,0 +1,26 @@
+# ── Dependencies ──
+node_modules/
+
+# ── Environment variables ──
+.env
+.env.local
+.env.development
+.env.production
+
+# ── Logs ──
+logs/
+*.log
+npm-debug.log*
+
+# ── Runtime ──
+pids/
+*.pid
+
+# ── OS files ──
+.DS_Store
+Thumbs.db
+
+# ── Editor ──
+.vscode/
+.idea/
+*.swp
