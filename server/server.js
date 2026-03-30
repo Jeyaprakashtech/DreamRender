@@ -9,7 +9,9 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 await connectDB();
 app.use("/api/users", userRouter);
